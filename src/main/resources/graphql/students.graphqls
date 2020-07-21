@@ -1,0 +1,28 @@
+type Query{
+    student(name:String):Student
+    students:[Student]
+}
+
+type Mutation{
+    createStudent(input:StudentInput):Student
+}
+
+type Student{
+    name:String!
+    age:Int!
+    phone:String
+    address:Address!
+}
+
+input StudentInput{
+    name: String!
+    age: Int!
+    phone: String
+    address: AddressInput!
+}
+
+input AddressInput{
+    street: String!
+    city:   String!
+    zipcode: Int!
+}
